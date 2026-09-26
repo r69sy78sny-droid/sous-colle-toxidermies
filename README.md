@@ -25,3 +25,7 @@ Deux fichiers autonomes, `index.html` (vrai jeu) et `demo.html` (page de test), 
 - Photographies : Wikimedia Commons, chargées depuis leurs URL d'origine ; auteurs et licences listés en bas de page de l'application.
 
 Outil de révision entre étudiants, sans valeur de recommandation clinique.
+
+## Modifier le contenu
+
+Les deux pages publiées sont générées à partir de `src/` : `head.html` (structure, styles, fiches), `data.js` (questions, cas, cartes flash, mini-jeux), `data_demo.js` et `course_demo.html` (page de test), `fx.js` (sons et animations), `app.js` (moteur commun). Après une modification : `python3 src/build.py`, puis commit et push.

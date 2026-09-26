@@ -1,0 +1,121 @@
+{
+ "lyell_dos": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/TENS_patient_on_day_10.jpg/960px-TENS_patient_on_day_10.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:TENS_patient_on_day_10.jpg",
+  "credit": "Jay2Base",
+  "lic": "CC BY-SA 4.0",
+  "cap": "Syndrome de Lyell (NET) à la phase d'état : vastes décollements épidermiques du dos (J10)."
+ },
+ "lambeaux": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Toxic-epidermal-necrolysis.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Toxic-epidermal-necrolysis.jpg",
+  "credit": "Madhero88",
+  "lic": "CC BY-SA 3.0",
+  "cap": "Nécrolyse épidermique : épiderme nécrosé décollé en lambeaux, aspect « en linge mouillé »."
+ },
+ "net_precoce": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Early_stage_blisters_on_the_back_TENS_patient.jpg/960px-Early_stage_blisters_on_the_back_TENS_patient.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Early_stage_blisters_on_the_back_TENS_patient.jpg",
+  "credit": "Jay2Base",
+  "lic": "CC BY-SA 4.0",
+  "cap": "NET débutante (J3) : macules érythémato-violacées confluentes et premières bulles du dos."
+ },
+ "sjs_visage": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/5/58/Stevens-johnson-syndrome.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Stevens-johnson-syndrome.jpg",
+  "credit": "Dr. Thomas Habif",
+  "lic": "CC BY-SA 3.0",
+  "cap": "Syndrome de Stevens-Johnson : macules sombres du visage, érosions et croûtes hémorragiques des lèvres."
+ },
+ "sjs_bouche": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Mucosal_desquamation_in_a_person_with_Stevens%E2%80%93Johnson_syndrome.jpg/960px-Mucosal_desquamation_in_a_person_with_Stevens%E2%80%93Johnson_syndrome.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mucosal_desquamation_in_a_person_with_Stevens%E2%80%93Johnson_syndrome.jpg",
+  "credit": "James Heilman, MD",
+  "lic": "CC BY-SA 3.0",
+  "cap": "Atteinte muqueuse buccale érosive au cours d'un syndrome de Stevens-Johnson."
+ },
+ "sjs_oeil": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/2/20/Stevens-Johnson_Syndrome_Conjunctivitis.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Stevens-Johnson_Syndrome_Conjunctivitis.jpg",
+  "credit": "Jonathan Trobe, University of Michigan Kellogg Eye Center",
+  "lic": "CC BY 3.0",
+  "cap": "Atteinte conjonctivale d'un syndrome de Stevens-Johnson."
+ },
+ "epf": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Drug_eruption2.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Drug_eruption2.jpg",
+  "credit": "D. M. Pillsbury & C. S. Livingood",
+  "lic": "Public domain",
+  "cap": "Érythème pigmenté fixe (phénolphtaléine) : macule arrondie rouge sombre, bien limitée."
+ },
+ "peag": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/9/91/Acute_generalized_exanthematous_pustulosis.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Acute_generalized_exanthematous_pustulosis.jpg",
+  "credit": "Khalel MH et al., Indian J Dermatol 2010",
+  "lic": "CC BY 1.0",
+  "cap": "PEAG (méropénème) : multiples petites pustules sous-cornées sur fond érythémateux."
+ },
+ "emp_dos": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Rash_of_amoxicillin_use_during_EBV_infection.jpg/960px-Rash_of_amoxicillin_use_during_EBV_infection.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Rash_of_amoxicillin_use_during_EBV_infection.jpg",
+  "credit": "Sgamer1770",
+  "lic": "CC BY-SA 4.0",
+  "cap": "Exanthème maculo-papuleux (amoxicilline-acide clavulanique au cours d'une primo-infection EBV)."
+ },
+ "emp_enfant": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Amoxicillin_rash_26_hours_after_17th_dose.JPG/960px-Amoxicillin_rash_26_hours_after_17th_dose.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Amoxicillin_rash_26_hours_after_17th_dose.JPG",
+  "credit": "Skoch3",
+  "lic": "CC BY-SA 4.0",
+  "cap": "Exanthème maculo-papuleux morbilliforme sous amoxicilline chez un enfant."
+ },
+ "urticaire": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Hives2010.JPG/960px-Hives2010.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Hives2010.JPG",
+  "credit": "James Heilman, MD",
+  "lic": "CC BY-SA 3.0",
+  "cap": "Urticaire superficielle : papules œdémateuses érythémateuses bien limitées."
+ },
+ "urticaire_geante": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Urticaire_g%C3%A9ant_dosD%C3%A9tail.jpg/960px-Urticaire_g%C3%A9ant_dosD%C3%A9tail.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Urticaire_g%C3%A9ant_dosD%C3%A9tail.jpg",
+  "credit": "Ericalens (travail dérivé : F. L)",
+  "lic": "CC BY 3.0",
+  "cap": "Urticaire géante (plaques œdémateuses confluentes) du dos."
+ },
+ "angioedeme": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Angioedema2010.JPG/960px-Angioedema2010.JPG",
+  "page": "https://commons.wikimedia.org/wiki/File:Angioedema2010.JPG",
+  "credit": "James Heilman, MD",
+  "lic": "CC BY-SA 3.0",
+  "cap": "Angiœdème (urticaire profonde) des paupières : l'enfant ne peut plus ouvrir les yeux."
+ },
+ "photo": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Phototoxic_reaction_from_Ketoprofen.jpg/960px-Phototoxic_reaction_from_Ketoprofen.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Phototoxic_reaction_from_Ketoprofen.jpg",
+  "credit": "Simon A. Eugster",
+  "lic": "CC BY-SA 4.0",
+  "cap": "Photosensibilité au kétoprofène topique : érythème limité à la zone traitée puis exposée au soleil."
+ },
+ "ep": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Erythema_Multiforme_target_lesions_on_the_leg%2C_Nell_Brigham%2C_2011.jpg/960px-Erythema_Multiforme_target_lesions_on_the_leg%2C_Nell_Brigham%2C_2011.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Erythema_Multiforme_target_lesions_on_the_leg,_Nell_Brigham,_2011.jpg",
+  "credit": "Nbrigham",
+  "lic": "CC BY-SA 3.0",
+  "cap": "Érythème polymorphe : cocardes (lésions en cible) de la jambe."
+ },
+ "erythrodermie": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Erythetoderma_%2Cexfolative_dermatits.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Erythetoderma_,exfolative_dermatits.jpg",
+  "credit": "Mohammad2018",
+  "lic": "CC BY-SA 4.0",
+  "cap": "Érythrodermie (étiologie non précisée) : stade extrême possible d'un DRESS."
+ },
+ "ssss": {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/3/3e/OSC_Microbio_21_02_SSSS.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:OSC_Microbio_21_02_SSSS.jpg",
+  "credit": "OpenStax (Microbiology)",
+  "lic": "CC BY 4.0",
+  "cap": "Épidermolyse staphylococcique (SSSS) : décollement superficiel, sans atteinte muqueuse."
+ }
+}

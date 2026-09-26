@@ -594,6 +594,80 @@ details.acc > summary:hover .num{transform:rotate(-8deg) scale(1.08)}
   .pq,.buckets{grid-template-columns:1fr}
   .study-bar .spacer{display:none}
 }
+
+/* =================== MODE TÉLÉPHONES =================== */
+.hard-chip{background:color-mix(in srgb,var(--bad) 16%,transparent);color:var(--bad);border:1px solid color-mix(in srgb,var(--bad) 40%,transparent)}
+.opts.xl{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts.xl .opt{font-size:.93rem;padding:10px 12px}
+div.opt{cursor:default}
+.lobby h3{margin-bottom:10px}
+.qr-wrap{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center}
+.qr{background:#fff;border-radius:12px;padding:6px;aspect-ratio:1;display:grid;place-items:center}
+.qr svg,.qr img{width:100%;height:auto;display:block}
+.room-code{font-size:1.9rem;font-weight:900;letter-spacing:.14em;color:var(--accent);line-height:1.1}
+.net-status{font-size:.8rem;font-weight:700;margin:10px 0 6px;color:var(--muted)}
+.lobby-players{display:grid;gap:6px}
+.lp{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:10px;background:var(--surface-2);font-weight:700;font-size:.9rem}
+.lp .avatar{width:26px;height:26px;font-size:.8rem;background:var(--pc)}
+.lp .dot{margin-left:auto;width:11px;height:11px;border-radius:50%;background:var(--surface-3);box-shadow:0 0 0 2px var(--surface)}
+.lp .dot.on{background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 25%,transparent);animation:beat 2s ease-in-out infinite}
+.answered-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.ans-chip{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;border:2px dashed var(--border);background:var(--surface);flex-wrap:wrap;transition:border-color .3s,background .3s}
+.ans-chip .avatar{width:34px;height:34px;background:var(--pc);flex:none}
+.ans-chip b{display:block}
+.ans-chip small{display:block;font-size:.8rem;line-height:1.3}
+.ans-chip.in{border-style:solid;border-color:var(--pc);background:color-mix(in srgb,var(--pc) 10%,var(--surface));animation:selPop .4s ease}
+.ans-chip.ok{border-style:solid;border-color:var(--ok);background:var(--ok-bg)}
+.ans-chip.mid{border-style:solid;border-color:var(--warn);background:var(--warn-bg)}
+.ans-chip.ko{border-style:solid;border-color:var(--bad);background:var(--bad-bg)}
+.dots3::after{content:"…";animation:wiggle 1s infinite;display:inline-block}
+.mini-av{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--pc);color:#fff;font-size:.72rem;font-weight:900;margin-left:3px;box-shadow:0 0 0 2px var(--surface);animation:selPop .4s ease backwards}
+@media (max-width:720px){ .answered-row,.opts.xl{grid-template-columns:1fr} }
+
+/* --- écran manette (téléphone) --- */
+body.phone-mode > header,body.phone-mode > .scorebar,body.phone-mode > main,body.phone-mode > footer,body.phone-mode > .demo-banner{display:none!important}
+#phone{max-width:560px;margin:0 auto;padding:12px 14px 110px;min-height:100vh}
+.ph-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ph-head b{display:block}
+.ph-head small{color:var(--muted)}
+.ph-conn{margin-left:auto;width:12px;height:12px;border-radius:50%;background:var(--warn)}
+.ph-conn.on{background:var(--ok)}
+.ph-conn.error,.ph-conn.off{background:var(--bad)}
+.ph-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:var(--shadow);animation:cardIn .4s cubic-bezier(.2,1.2,.4,1)}
+.ph-card.center{text-align:center}
+.ph-card h2{margin:.2em 0 .3em}
+.ph-spin{width:44px;height:44px;border-radius:50%;border:4px solid var(--surface-3);border-top-color:var(--accent);margin:10px auto;animation:spinR 1s linear infinite}
+@keyframes spinR{to{transform:rotate(360deg)}}
+.ph-roster{display:grid;gap:10px;margin-top:10px}
+.ph-who{display:flex;align-items:center;gap:12px;padding:14px;border-radius:16px;border:2px solid var(--pc);background:color-mix(in srgb,var(--pc) 10%,var(--surface));font-size:1.2rem;font-weight:800;cursor:pointer;color:var(--text)}
+.ph-who .avatar{background:var(--pc)}
+.ph-me{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:14px;background:color-mix(in srgb,var(--pc) 14%,var(--surface));margin-bottom:12px;border:2px solid var(--pc)}
+.ph-me .avatar{width:32px;height:32px;background:var(--pc)}
+.ph-score{margin-left:auto;font-weight:900;font-size:1.1rem}
+.ph-link{border:0;background:none;color:var(--muted);text-decoration:underline;font-size:.78rem;cursor:pointer}
+.ph-wait{font-size:3.2rem;display:inline-block;animation:wiggle 1.4s ease-in-out infinite}
+.ph-q-head{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.ph-timer{margin-left:auto;font-weight:900;font-variant-numeric:tabular-nums;padding:4px 10px;border-radius:999px;background:var(--surface-2)}
+.ph-timer.low{background:var(--bad-bg);color:var(--bad);animation:shake .5s infinite}
+.ph-q{font-size:1.1rem;font-weight:700;line-height:1.4}
+.ph-opts{display:grid;gap:8px}
+.ph-opt{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;padding:13px 12px;border-radius:14px;border:2px solid var(--border);background:var(--surface);color:var(--text);font-size:1rem;cursor:pointer;line-height:1.35}
+.ph-opt .l{flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--surface-2);font-weight:900}
+.ph-opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.ph-opt.sel .l{background:var(--accent);color:var(--accent-ink)}
+.ph-input{width:100%;padding:14px;border-radius:14px;border:2px solid var(--border);background:var(--surface);color:var(--text);font-size:1.15rem;font-weight:700}
+.ph-order{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.ph-chip{border:2px solid var(--border);background:var(--surface);color:var(--text);border-radius:12px;padding:10px 12px;font-weight:700;cursor:pointer;font-size:.95rem}
+.ph-chip.on{border-color:var(--accent);background:var(--accent-soft)}
+.ph-ordered{padding-left:1.4em;margin:0;display:grid;gap:6px}
+.ph-status{font-size:.85rem;margin:12px 0 0}
+.ph-send{position:fixed;left:14px;right:14px;bottom:14px;max-width:532px;margin:0 auto;padding:18px;border:0;border-radius:18px;background:var(--accent);color:var(--accent-ink);font-size:1.15rem;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.25);cursor:pointer}
+.ph-send.sent{background:var(--surface-2);color:var(--text);border:2px solid var(--accent)}
+.ph-result .ph-big{font-size:4rem;animation:splashIn .6s cubic-bezier(.2,1.3,.4,1)}
+.ph-result.ok{border-color:var(--ok);background:var(--ok-bg)}
+.ph-result.mid{border-color:var(--warn);background:var(--warn-bg)}
+.ph-result.ko{border-color:var(--bad);background:var(--bad-bg)}
+.ph-pts{font-size:1.6rem;font-weight:900;margin:.2em 0}
 </style>
 </head>
 <body>
@@ -685,7 +759,7 @@ details.acc > summary:hover .num{transform:rotate(-8deg) scale(1.08)}
           <p>Le délai entre l'<b>introduction</b> du médicament et les premiers signes est la clé de l'imputabilité <span class="oic">(OIC-115-09-A et 115-10-A)</span>. Échelle logarithmique :</p>
           <div class="tl" id="timeline"></div>
           <div class="tl-legend"><span><i style="background:var(--bad)"></i>Urgence vitale possible</span><span><i style="background:var(--c-urg)"></i>Potentiellement grave</span><span><i style="background:var(--c-semio)"></i>Habituellement bénin</span></div>
-          <div class="note"><b>Correction du cahier des charges :</b> selon LiSA 2026, le délai du <b>DRESS est de 2 à 6 semaines</b> (et non 2 à 8), celui de la <b>nécrolyse épidermique de 4 à 28 jours</b> (soit environ 1 à 4 semaines). Ce sont ces chiffres qui sont utilisés dans le jeu.</div>
+          <div class="note"><b>Deux sources, deux chiffres :</b> LiSA 2026 donne pour le DRESS un délai de <b>2 à 6 semaines</b> ; le PNDS DRESS 2024 de la HAS dit <b>2 à 8 semaines</b>, avec des DRESS plus précoces (produits de contraste iodés : 1 à 4 jours, bêta-lactamines). Pour la nécrolyse épidermique : <b>4 à 28 jours</b>, au maximum 56 jours (PNDS 2023). Le jeu suit LiSA ; les questions 💀 EDN+ testent aussi les PNDS.</div>
           <div class="tbl-wrap"><table class="tbl">
             <thead><tr><th>Toxidermie</th><th>Délai typique (LiSA)</th><th>Moyen mnémotechnique</th></tr></thead>
             <tbody>
@@ -966,7 +1040,7 @@ details.acc > summary:hover .num{transform:rotate(-8deg) scale(1.08)}
                 <li><b>Choc anaphylactique</b> : <b>adrénaline IM 0,01 mg/kg</b> (0,5 mg pour 50 kg), face latérale du tiers moyen de la cuisse, à renouveler toutes les 5 min ; remplissage par cristalloïdes ; salbutamol inhalé si bronchospasme. La voie IV (titration à 0,001 mg/kg) est réservée aux équipes entraînées. Les corticoïdes ne sont pas une urgence (prévention du rebond) ; les anti-H1 n'agissent que sur les signes cutanéo-muqueux (item 332, OIC-332-13-A).</li>
                 <li><b>PEAG</b> : arrêt, soins locaux, dermocorticoïdes, antipyrétiques ; pas d'antibiotique (pustules amicrobiennes).</li>
                 <li><b>DRESS</b> <span class="rang rang-C">Collège</span> : hospitalisation, bilan d'organes, <b>dermocorticoïdes de très forte activité</b> ; <b>corticothérapie générale</b> en cas d'atteinte viscérale sévère, avec décroissance lente ; suivi prolongé (poussées, thyroïdite ou diabète auto-immuns à distance).</li>
-                <li><b>NET</b> <span class="rang rang-C">Collège</span> : transfert en <b>réanimation, centre des brûlés ou service spécialisé en lien avec un centre de référence</b> ; chambre chauffée (30-32 °C), compensation hydroélectrolytique, <b>nutrition entérale</b>, antalgiques (morphiniques), anticoagulation préventive, pansements non adhérents, <b>examen ophtalmologique quotidien</b> et soins oculaires pluriquotidiens, soins de bouche ; surveillance infectieuse, <b>pas d'antibioprophylaxie</b> ; <b>pas de corticothérapie générale</b> (aucun bénéfice démontré, risque infectieux).</li>
+                <li><b>NET</b> <span class="rang rang-C">Collège</span> : transfert en <b>réanimation, centre des brûlés ou service spécialisé en lien avec un centre de référence</b> ; chambre chauffée (28-32 °C), compensation hydroélectrolytique, <b>nutrition entérale</b>, antalgiques (morphiniques), anticoagulation préventive, pansements non adhérents, <b>examen ophtalmologique quotidien</b> et soins oculaires pluriquotidiens, soins de bouche ; surveillance infectieuse, <b>pas d'antibioprophylaxie</b> ; <b>pas de corticothérapie générale</b> (aucun bénéfice démontré, risque infectieux).</li>
               </ul>
             </div>
           </div>

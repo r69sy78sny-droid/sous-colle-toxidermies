@@ -594,6 +594,80 @@ details.acc > summary:hover .num{transform:rotate(-8deg) scale(1.08)}
   .pq,.buckets{grid-template-columns:1fr}
   .study-bar .spacer{display:none}
 }
+
+/* =================== MODE TÉLÉPHONES =================== */
+.hard-chip{background:color-mix(in srgb,var(--bad) 16%,transparent);color:var(--bad);border:1px solid color-mix(in srgb,var(--bad) 40%,transparent)}
+.opts.xl{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts.xl .opt{font-size:.93rem;padding:10px 12px}
+div.opt{cursor:default}
+.lobby h3{margin-bottom:10px}
+.qr-wrap{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center}
+.qr{background:#fff;border-radius:12px;padding:6px;aspect-ratio:1;display:grid;place-items:center}
+.qr svg,.qr img{width:100%;height:auto;display:block}
+.room-code{font-size:1.9rem;font-weight:900;letter-spacing:.14em;color:var(--accent);line-height:1.1}
+.net-status{font-size:.8rem;font-weight:700;margin:10px 0 6px;color:var(--muted)}
+.lobby-players{display:grid;gap:6px}
+.lp{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:10px;background:var(--surface-2);font-weight:700;font-size:.9rem}
+.lp .avatar{width:26px;height:26px;font-size:.8rem;background:var(--pc)}
+.lp .dot{margin-left:auto;width:11px;height:11px;border-radius:50%;background:var(--surface-3);box-shadow:0 0 0 2px var(--surface)}
+.lp .dot.on{background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 25%,transparent);animation:beat 2s ease-in-out infinite}
+.answered-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.ans-chip{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;border:2px dashed var(--border);background:var(--surface);flex-wrap:wrap;transition:border-color .3s,background .3s}
+.ans-chip .avatar{width:34px;height:34px;background:var(--pc);flex:none}
+.ans-chip b{display:block}
+.ans-chip small{display:block;font-size:.8rem;line-height:1.3}
+.ans-chip.in{border-style:solid;border-color:var(--pc);background:color-mix(in srgb,var(--pc) 10%,var(--surface));animation:selPop .4s ease}
+.ans-chip.ok{border-style:solid;border-color:var(--ok);background:var(--ok-bg)}
+.ans-chip.mid{border-style:solid;border-color:var(--warn);background:var(--warn-bg)}
+.ans-chip.ko{border-style:solid;border-color:var(--bad);background:var(--bad-bg)}
+.dots3::after{content:"…";animation:wiggle 1s infinite;display:inline-block}
+.mini-av{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--pc);color:#fff;font-size:.72rem;font-weight:900;margin-left:3px;box-shadow:0 0 0 2px var(--surface);animation:selPop .4s ease backwards}
+@media (max-width:720px){ .answered-row,.opts.xl{grid-template-columns:1fr} }
+
+/* --- écran manette (téléphone) --- */
+body.phone-mode > header,body.phone-mode > .scorebar,body.phone-mode > main,body.phone-mode > footer,body.phone-mode > .demo-banner{display:none!important}
+#phone{max-width:560px;margin:0 auto;padding:12px 14px 110px;min-height:100vh}
+.ph-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ph-head b{display:block}
+.ph-head small{color:var(--muted)}
+.ph-conn{margin-left:auto;width:12px;height:12px;border-radius:50%;background:var(--warn)}
+.ph-conn.on{background:var(--ok)}
+.ph-conn.error,.ph-conn.off{background:var(--bad)}
+.ph-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:var(--shadow);animation:cardIn .4s cubic-bezier(.2,1.2,.4,1)}
+.ph-card.center{text-align:center}
+.ph-card h2{margin:.2em 0 .3em}
+.ph-spin{width:44px;height:44px;border-radius:50%;border:4px solid var(--surface-3);border-top-color:var(--accent);margin:10px auto;animation:spinR 1s linear infinite}
+@keyframes spinR{to{transform:rotate(360deg)}}
+.ph-roster{display:grid;gap:10px;margin-top:10px}
+.ph-who{display:flex;align-items:center;gap:12px;padding:14px;border-radius:16px;border:2px solid var(--pc);background:color-mix(in srgb,var(--pc) 10%,var(--surface));font-size:1.2rem;font-weight:800;cursor:pointer;color:var(--text)}
+.ph-who .avatar{background:var(--pc)}
+.ph-me{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:14px;background:color-mix(in srgb,var(--pc) 14%,var(--surface));margin-bottom:12px;border:2px solid var(--pc)}
+.ph-me .avatar{width:32px;height:32px;background:var(--pc)}
+.ph-score{margin-left:auto;font-weight:900;font-size:1.1rem}
+.ph-link{border:0;background:none;color:var(--muted);text-decoration:underline;font-size:.78rem;cursor:pointer}
+.ph-wait{font-size:3.2rem;display:inline-block;animation:wiggle 1.4s ease-in-out infinite}
+.ph-q-head{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:8px}
+.ph-timer{margin-left:auto;font-weight:900;font-variant-numeric:tabular-nums;padding:4px 10px;border-radius:999px;background:var(--surface-2)}
+.ph-timer.low{background:var(--bad-bg);color:var(--bad);animation:shake .5s infinite}
+.ph-q{font-size:1.1rem;font-weight:700;line-height:1.4}
+.ph-opts{display:grid;gap:8px}
+.ph-opt{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;padding:13px 12px;border-radius:14px;border:2px solid var(--border);background:var(--surface);color:var(--text);font-size:1rem;cursor:pointer;line-height:1.35}
+.ph-opt .l{flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--surface-2);font-weight:900}
+.ph-opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.ph-opt.sel .l{background:var(--accent);color:var(--accent-ink)}
+.ph-input{width:100%;padding:14px;border-radius:14px;border:2px solid var(--border);background:var(--surface);color:var(--text);font-size:1.15rem;font-weight:700}
+.ph-order{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.ph-chip{border:2px solid var(--border);background:var(--surface);color:var(--text);border-radius:12px;padding:10px 12px;font-weight:700;cursor:pointer;font-size:.95rem}
+.ph-chip.on{border-color:var(--accent);background:var(--accent-soft)}
+.ph-ordered{padding-left:1.4em;margin:0;display:grid;gap:6px}
+.ph-status{font-size:.85rem;margin:12px 0 0}
+.ph-send{position:fixed;left:14px;right:14px;bottom:14px;max-width:532px;margin:0 auto;padding:18px;border:0;border-radius:18px;background:var(--accent);color:var(--accent-ink);font-size:1.15rem;font-weight:900;box-shadow:0 10px 30px rgba(0,0,0,.25);cursor:pointer}
+.ph-send.sent{background:var(--surface-2);color:var(--text);border:2px solid var(--accent)}
+.ph-result .ph-big{font-size:4rem;animation:splashIn .6s cubic-bezier(.2,1.3,.4,1)}
+.ph-result.ok{border-color:var(--ok);background:var(--ok-bg)}
+.ph-result.mid{border-color:var(--warn);background:var(--warn-bg)}
+.ph-result.ko{border-color:var(--bad);background:var(--bad-bg)}
+.ph-pts{font-size:1.6rem;font-weight:900;margin:.2em 0}
 </style>
 </head>
 <body>
@@ -1070,7 +1144,7 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const strip = s => String(s ?? "").replace(/<[^>]+>/g, "").replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&amp;/g, "&");
 const norm = s => String(s ?? "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
-const LETTERS = "ABCDEFGHIJ";
+const LETTERS = "ABCDEFGHIJKL";
 const LS_KEY = DEMO ? "toxiquest-demo-v1" : "toxiquest-115-v1";
 const PREF_KEY = "toxiquest-prefs";
 const PCOLORS = ["var(--p1)", "var(--p2)", "var(--p3)"];
@@ -1083,7 +1157,7 @@ const caseById = Object.fromEntries(CASES.map(c => [c.id, c]));
 const rangOf = oic => (oic ? oic.slice(-1) : "C");
 const rangBadge = (oic, col) => {
   const r = rangOf(oic);
-  return `<span class="rang rang-${r}">[RANG ${r}]</span>` + (col ? ` <span class="rang rang-C">Compl. Collège</span>` : "");
+  return `<span class="rang rang-${r}">[RANG ${r}]</span>` + (col ? ` <span class="rang rang-C">Compl. ${col === true ? "Collège" : esc(col)}</span>` : "");
 };
 const oicLine = oic => oic ? `<span class="oic">${esc(oic)} · ${esc(OIC[oic] || "")}</span>` : "";
 const listFr = xs => xs.length <= 1 ? xs.join("") : xs.slice(0, -1).join(", ") + " et " + xs[xs.length - 1];
@@ -1094,7 +1168,7 @@ const bump = (el, cls) => { if (!el) return; el.classList.remove(cls); void el.o
 /* ---------------- état ---------------- */
 function freshCourse() { return { v2: 1, open: {}, recited: {}, cards: {}, games: {}, cheer: false }; }
 function freshState() {
-  return { v: 1, screen: 0, players: [], settings: { rounds: DEMO ? 2 : 5, timer: 0 },
+  return { v: 1, screen: 0, players: [], settings: { rounds: DEMO ? 2 : 5, timer: 0, level: "hard", mode: "turn" },
     trivial: { turn: 0, round: 1, asked: [], cur: null, done: false, rot: 0 },
     log: [], cases: {}, activeCase: null, course: freshCourse() };
 }
@@ -1105,6 +1179,7 @@ function load() {
 function save() { try { localStorage.setItem(LS_KEY, JSON.stringify(S)); } catch (e) { /* stockage indisponible : la partie reste en mémoire */ } }
 let S = load() || freshState();
 if (!S.course || !S.course.v2) S.course = freshCourse();
+S.settings = Object.assign({ level: "hard", mode: "turn" }, S.settings);
 
 let prefs = { theme: "auto", fs: 1 };
 try { prefs = Object.assign(prefs, JSON.parse(localStorage.getItem(PREF_KEY) || "{}")); } catch (e) { /* préférences par défaut */ }
@@ -1195,6 +1270,7 @@ function go(n, silent = false) {
     b.disabled = +b.dataset.go >= 2 && !S.players.length;
   });
   clearInterval(timerId);
+  if (PHONES()) ensureHost();
   if (n === 0) renderSetup();
   if (n === 1) renderCourseProgress();
   if (n === 2) renderTrivial();
@@ -1230,16 +1306,17 @@ function renderScorebar() {
   const bar = $("#scorebar");
   if (!S.players.length) { bar.classList.add("hidden"); return; }
   bar.classList.remove("hidden");
-  const onTrivial = S.screen === 2 && !S.trivial.done;
+  const onTrivial = S.screen === 2 && !S.trivial.done && !PHONES();
+  const phoneQ = PHONES() && S.screen === 2 && S.trivial.cur && !S.trivial.cur.revealed ? S.trivial.cur : null;
   const scores = S.players.map((_, i) => playerScore(i)), team = teamScore();
   const wedges = S.players.map((_, i) => wedgesOf(i));
   const prev = lastScores && lastScores.p.length === scores.length ? lastScores : { p: scores, team };
   const prevW = lastWedges || wedges;
   $("#scorebar-inner").innerHTML = S.players.map((p, i) => {
     const turn = onTrivial && S.trivial.turn === i, st = streakOf(i);
-    return `<div class="pchip${turn ? " turn" : ""}" data-pchip="${i}" style="--pc:${PCOLORS[i]}">
+    return `<div class="pchip${turn || (phoneQ && phoneQ.answers && phoneQ.answers[i]) ? " turn" : ""}" data-pchip="${i}" style="--pc:${PCOLORS[i]}">
       <div class="avatar">${initial(p.name)}</div>
-      <div class="who">${turn ? `<span class="turn-tag">À toi de jouer</span>` : ""}<b>${esc(p.name)}${st >= 2 ? `<span class="streak" title="Bonnes réponses d'affilée">🔥${st}</span>` : ""}</b><small>${Object.keys(wedges[i]).length}/5 camemberts</small></div>
+      <div class="who">${turn ? `<span class="turn-tag">À toi de jouer</span>` : phoneQ ? `<span class="turn-tag">${phoneQ.answers && phoneQ.answers[i] ? "📱 a répondu ✓" : "📱 réfléchit…"}</span>` : ""}<b>${esc(p.name)}${st >= 2 ? `<span class="streak" title="Bonnes réponses d'affilée">🔥${st}</span>` : ""}</b><small>${Object.keys(wedges[i]).length}/5 camemberts</small></div>
       ${pie(wedges[i], 30, prevW[i])}
       <div class="pts">${prev.p[i]}</div></div>`;
   }).join("") +
@@ -1287,15 +1364,27 @@ function renderSetup() {
           <label>Chronomètre par question (avec tic-tac)
             <select name="timer">${[[0, "Sans chrono"], [20, "20 secondes (pour tester)"], [60, "60 secondes"], [90, "90 secondes"], [120, "120 secondes"]].filter(([v]) => DEMO || v !== 20).map(([v, l]) => `<option value="${v}"${t === v ? " selected" : ""}>${l}</option>`).join("")}</select></label>
         </div>
+        <div class="opts-row">
+          <label>Comment répond-on au Trivial ?
+            <select name="mode">${[["turn", "🔄 Tour par tour sur cet écran"], ["phones", "📱 Chacun sur son téléphone, en même temps"]].map(([v, l]) => `<option value="${v}"${S.settings.mode === v ? " selected" : ""}>${l}</option>`).join("")}</select></label>
+          <label>Niveau des questions
+            <select name="level">${[["hard", `💀 Difficiles d'abord (${NHARD} questions EDN+)`], ["all", "Tout mélangé"], ["std", "Standard seulement"]].map(([v, l]) => `<option value="${v}"${S.settings.level === v ? " selected" : ""}>${l}</option>`).join("")}</select></label>
+        </div>
         <div class="btn-row" style="margin-top:8px">
           <button class="btn btn-primary btn-big pulse" type="submit" data-next="1">${has ? "Enregistrer et ouvrir le cours" : "Commencer par les fiches"}</button>
           <button class="btn" type="submit" data-next="2">${has ? "Reprendre le Trivial" : "Directement au Trivial"}</button>
         </div>
       </form>
       ${has ? `<div class="btn-row" style="margin-top:14px"><button class="btn" id="reset-btn" type="button">Nouvelle partie (tout effacer)</button></div>` : ""}
+      <div class="note info" style="margin-top:14px"><b>📱 Sur un téléphone ?</b> Pour rejoindre une partie lancée sur l'ordinateur, scannez son QR code, ou tapez le code de salle : <form id="join-form" style="display:inline-flex;gap:6px;margin-top:6px"><input name="code" maxlength="5" placeholder="CODE" style="width:92px;text-transform:uppercase;border:1px solid var(--border);border-radius:8px;padding:6px 8px;background:var(--surface);color:var(--text);font-weight:800;letter-spacing:.1em"><button class="btn" type="submit" style="padding:6px 12px">Rejoindre</button></form></div>
       <p style="margin-top:12px"><small>La partie est enregistrée dans ce navigateur : un rechargement de la page ne fait rien perdre. Raccourcis : <span class="kbd">A</span>–<span class="kbd">E</span> pour cocher, <span class="kbd">Entrée</span> pour valider, <span class="kbd">M</span> pour couper le son (bouton 🔊 en haut à droite).</small></p>
     </div>
   </div>`;
+  $("#join-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const c = e.target.code.value.trim().toUpperCase();
+    if (c.length >= 4) location.href = `${location.pathname}?join=${encodeURIComponent(c)}`;
+  });
   let next = 1;
   $$("#setup-form [data-next]").forEach(b => b.addEventListener("click", () => { next = +b.dataset.next; }));
   $$("#setup-form input").forEach((inp, i) => inp.addEventListener("input", () => {
@@ -1311,6 +1400,9 @@ function renderSetup() {
     if (S.players.length) S.players.forEach((p, i) => p.name = nm[i]);
     else S.players = nm.map(name => ({ name }));
     S.settings.rounds = +f.rounds.value; S.settings.timer = +f.timer.value;
+    S.settings.level = f.level.value;
+    const wasPhones = PHONES(); S.settings.mode = f.mode.value;
+    if (wasPhones && !PHONES()) Net.stop();
     if (S.trivial.done && S.trivial.round <= S.settings.rounds && remainingTotal() > 0) S.trivial.done = false;
     save(); Sound.play("start"); go(next, true);
   });
@@ -1320,6 +1412,7 @@ function renderSetup() {
   });
 }
 function resetAll() {
+  if (Net.role === "host") { Net.send("down", null, true); Net.stop(); }
   S = freshState(); lastScores = null; lastWedges = null; save();
   $$(".game[data-game]").forEach(g => startGame(g.dataset.game));
   $$("details.acc").forEach(d => { d.classList.remove("reciting"); setMode(d, "read"); });
@@ -1642,8 +1735,11 @@ function courseStats() {
 /* =====================================================================
    ÉTAPE 2 — TRIVIAL PURSUIT
    ===================================================================== */
-const remaining = cat => QUESTIONS.filter(q => q.cat === cat && !S.trivial.asked.includes(q.id)).length;
-const remainingTotal = () => QUESTIONS.length - S.trivial.asked.length;
+const inLevel = q => S.settings.level !== "std" || !q.hard;
+const levelQs = () => QUESTIONS.filter(inLevel);
+const remaining = cat => QUESTIONS.filter(q => q.cat === cat && inLevel(q) && !S.trivial.asked.includes(q.id)).length;
+const remainingTotal = () => levelQs().filter(q => !S.trivial.asked.includes(q.id)).length;
+const NHARD = QUESTIONS.filter(q => q.hard).length;
 const WHEEL_LABEL = { semio: "Sémio", chrono: "Chrono", grav: "Gravité", urg: "Urgences", pv: "Pharmaco" };
 let spinning = false, animKey = null, revealKey = null;
 
@@ -1667,6 +1763,7 @@ function wheelSVG() {
 
 function renderTrivial() {
   clearInterval(timerId);
+  if (PHONES()) { renderTrivialPhones(); return; }
   const T = S.trivial, root = $("#trivial");
   if (T.done) { root.innerHTML = trivialEnd(); return; }
   const p = S.players[T.turn];
@@ -1736,23 +1833,25 @@ function spin() {
     spinning = false;
     box.style.setProperty("--lc", `var(${cat.css})`); box.classList.add("landed");
     Sound.play("land");
-    splash({ title: esc(cat.name), icon: cat.icon, color: `var(${cat.css})`, sub: `Question pour ${esc(S.players[S.trivial.turn].name)}`, ms: 1150 });
+    splash({ title: esc(cat.name), icon: cat.icon, color: `var(${cat.css})`, sub: PHONES() ? "Répondez sur vos téléphones 📱" : `Question pour ${esc(S.players[S.trivial.turn].name)}`, ms: 1150 });
     setTimeout(() => pickQuestion(cat.id), REDUCED ? 200 : 650);
   }, dur);
 }
 
 function pickQuestion(catId) {
-  const pool = QUESTIONS.filter(q => q.cat === catId && !S.trivial.asked.includes(q.id));
+  let pool = QUESTIONS.filter(q => q.cat === catId && inLevel(q) && !S.trivial.asked.includes(q.id));
   if (!pool.length) { toast("Plus de question dans cette catégorie."); return; }
+  if (S.settings.level === "hard" && pool.some(q => q.hard)) pool = pool.filter(q => q.hard);
   const q = pool[Math.floor(Math.random() * pool.length)];
   S.trivial.asked.push(q.id);
   S.trivial.cur = { qid: q.id, sel: [], text: "", order: [], shuffled: q.type === "order" ? shuffle(q.items) : null, answered: false, pts: 0,
-    deadline: S.settings.timer ? Date.now() + S.settings.timer * 1000 + 900 : 0 };
+    deadline: S.settings.timer ? Date.now() + S.settings.timer * 1000 + 900 : 0, answers: {}, revealed: false, results: null };
   save(); renderTrivial();
+  if (PHONES()) publishState();
 }
 
 function typeLabel(q) {
-  return { qcu: "QCU · une seule réponse", qrm: "QRM · plusieurs réponses (barème EDN)", qroc: "QROC · réponse courte", num: "Calcul", order: "Classement" }[q.type];
+  return { qcu: "QCU · une seule réponse", qrm: "QRM · plusieurs réponses (barème EDN)", qrp: `QRP · exactement ${q.n} réponses`, qroc: "QROC · réponse courte", num: "Calcul", order: "Classement" }[q.type];
 }
 function timerHTML() {
   return `<div class="tring" id="timer" title="Temps restant"><svg viewBox="0 0 36 36" aria-hidden="true"><circle class="bg" cx="18" cy="18" r="15.9"/><circle class="fg" cx="18" cy="18" r="15.9" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0"/></svg><b>${S.settings.timer}</b></div>`;
@@ -1764,8 +1863,8 @@ function questionHTML() {
   const key = cur.qid, enter = animKey !== key; animKey = key;
   const reveal = ans && revealKey === key; if (reveal) revealKey = null;
   let body = "";
-  if (q.type === "qcu" || q.type === "qrm") {
-    body = `<div class="opts" role="${q.type === "qcu" ? "radiogroup" : "group"}">${q.o.map((o, i) => {
+  if (q.o) {
+    body = `<div class="opts${q.o.length > 6 ? " xl" : ""}" role="${q.type === "qcu" ? "radiogroup" : "group"}">${q.o.map((o, i) => {
       let cls = "", tag = "";
       const sel = cur.sel.includes(i);
       if (ans) {
@@ -1784,11 +1883,11 @@ function questionHTML() {
       <div class="order-out" aria-label="Votre classement">${cur.order.map(t => `<button class="order-item" data-rem="${esc(t)}" ${ans ? "disabled" : ""}>${esc(t)}</button>`).join("") || `<small>Cliquez les éléments dans l'ordre, du premier au dernier.</small>`}</div>
       ${ans ? "" : `<div class="btn-row" style="margin-top:8px"><button class="btn" id="order-reset">Recommencer le classement</button></div>`}`;
   }
-  const hint = q.type === "qrm" ? `<p class="q-hint">Barème EDN : 0 discordance = 10 · 1 discordance = 5 · 2 = 2 · au-delà = 0.</p>` : "";
+  const hint = qHint(q);
   const grade = ans ? (cur.pts >= 10 ? "ok" : cur.pts > 0 ? "mid" : "ko") : "";
   const hasAnswer = cur.sel.length || cur.text.trim() || (q.items && cur.order.length === q.items.length);
   return `<article class="card qcard${enter ? " enter" : ""}${reveal ? " reveal " + grade : ""}" style="--cc:var(${cat.css})">
-    <div class="q-head"><span class="chip cat-chip" style="--cc:var(${cat.css})">${cat.icon} ${esc(cat.name)}</span><span class="chip">${typeLabel(q)}</span><span class="spacer"></span>
+    <div class="q-head"><span class="chip cat-chip" style="--cc:var(${cat.css})">${cat.icon} ${esc(cat.name)}</span><span class="chip">${typeLabel(q)}</span>${q.hard ? `<span class="chip hard-chip">💀 EDN+</span>` : ""}<span class="spacer"></span>
       <span class="chip" style="background:color-mix(in srgb,${PCOLORS[pIdx]} 18%,transparent);color:${PCOLORS[pIdx]}">${esc(p.name)}</span>
       ${S.settings.timer && !ans ? timerHTML() : ""}</div>
     <div class="q-text">${esc(q.q)}</div>${hint}
@@ -1798,9 +1897,14 @@ function questionHTML() {
   </article>`;
 }
 
+function qHint(q) {
+  if (q.type === "qrm") return `<p class="q-hint">Barème EDN : 0 discordance = 10 · 1 discordance = 5 · 2 = 2 · au-delà = 0.</p>`;
+  if (q.type === "qrp") return `<p class="q-hint">Cochez exactement ${q.n} réponses · barème proportionnel au nombre de bonnes réponses.</p>`;
+  return "";
+}
 function rightAnswer(q) {
   if (q.type === "qcu") return `${LETTERS[q.a]}. ${q.o[q.a]}`;
-  if (q.type === "qrm") return q.a.map(i => `${LETTERS[i]}. ${q.o[i]}`).join(" · ");
+  if (q.type === "qrm" || q.type === "qrp") return q.a.map(i => `${LETTERS[i]}. ${q.o[i]}`).join(" · ");
   if (q.type === "qroc") return q.expected;
   if (q.type === "num") return `${q.a} ${q.unit || ""}`.trim();
   if (q.type === "order") return q.items.join(" → ");
@@ -1811,7 +1915,7 @@ function feedbackHTML(q, cur) {
   const pts = cur.pts, jury = cur.jury;
   const cls = pts >= 10 ? "ok" : pts > 0 ? "mid" : "ko";
   const label = pts >= 10 ? (jury ? "Validé par le jury" : ["Bonne réponse !", "Parfait !", "Exactement !", "Bien joué !"][cur.qid.length % 4])
-    : pts > 0 ? (q.type === "order" ? "Presque : une inversion" : `Presque : ${cur.disc} discordance${cur.disc > 1 ? "s" : ""}`)
+    : pts > 0 ? (q.type === "order" ? "Presque : une inversion" : q.type === "qrp" ? `Presque : ${q.n - cur.disc}/${q.n} bonnes réponses` : `Presque : ${cur.disc} discordance${cur.disc > 1 ? "s" : ""}`)
     : cur.timeout ? "Temps écoulé !" : "Raté";
   const showRight = q.type === "qroc" || q.type === "num" || q.type === "order" || pts < 10;
   const contest = (q.type === "qroc" || q.type === "num") && pts === 0 && !jury;
@@ -1876,6 +1980,7 @@ function toggleOpt(i) {
   const q = qById[cur.qid];
   if (!q.o || i >= q.o.length) return;
   const added = q.type === "qcu" ? true : !cur.sel.includes(i);
+  if (added && q.type === "qrp" && cur.sel.length >= q.n) { toast(`${q.n} réponses maximum : décochez-en une d'abord.`); Sound.play("nope"); bump($(`#qzone [data-opt="${i}"]`), "nope"); return; }
   cur.sel = q.type === "qcu" ? [i] : (added ? cur.sel.concat(i) : cur.sel.filter(x => x !== i));
   save();
   $$("#qzone [data-opt]").forEach(b => { const on = cur.sel.includes(+b.dataset.opt); b.classList.toggle("sel", on); b.setAttribute("aria-pressed", String(on)); });
@@ -1883,7 +1988,7 @@ function toggleOpt(i) {
   Sound.play(added ? "click" : "unclick");
 }
 
-function startTimer() {
+function startTimer(onEnd = () => validate(true)) {
   const cur = S.trivial.cur, total = S.settings.timer * 1000;
   let lastSec = null;
   const tick = () => {
@@ -1900,7 +2005,7 @@ function startTimer() {
       bump(el, "tickb");
     }
     lastSec = sec;
-    if (left <= 0) { clearInterval(timerId); Sound.play("buzzer"); redFlash(); validate(true); }
+    if (left <= 0) { clearInterval(timerId); Sound.play("buzzer"); redFlash(); onEnd(); }
   };
   tick(); timerId = setInterval(tick, 200);
 }
@@ -1912,6 +2017,11 @@ function scoreQuestion(q, cur) {
       let d = 0; q.o.forEach((_, i) => { if (cur.sel.includes(i) !== q.a.includes(i)) d++; });
       const given = cur.sel.length ? cur.sel.slice().sort((a, b) => a - b).map(i => `${LETTERS[i]}. ${q.o[i]}`).join(" · ") : "(aucune case cochée)";
       return { pts: d === 0 ? 10 : d === 1 ? 5 : d === 2 ? 2 : 0, disc: d, given };
+    }
+    case "qrp": {
+      const ok = cur.sel.filter(i => q.a.includes(i)).length;
+      const given = cur.sel.length ? cur.sel.slice().sort((a, b) => a - b).map(i => `${LETTERS[i]}. ${q.o[i]}`).join(" · ") : "(aucune case cochée)";
+      return { pts: Math.round(10 * ok / q.n), disc: q.n - ok, given };
     }
     case "qroc": {
       const n = norm(cur.text);
@@ -1932,12 +2042,19 @@ function scoreQuestion(q, cur) {
   return { pts: 0, given: "" };
 }
 
+function answerProblem(q, a) {
+  if (q.type === "qrp" && a.sel.length !== q.n) return `Cochez exactement ${q.n} réponses.`;
+  if (q.o && !a.sel.length) return "Répondez d'abord (ou attendez la fin du chrono).";
+  if ((q.type === "qroc" || q.type === "num") && !String(a.text || "").trim()) return "Écrivez une réponse.";
+  if (q.type === "order" && a.order.length < q.items.length) return "Placez tous les éléments avant de valider.";
+  return "";
+}
 function validate(timeout = false) {
   const T = S.trivial, cur = T.cur; if (!cur || cur.answered) return;
   const q = qById[cur.qid];
   if (!timeout) {
-    const empty = (q.o && !cur.sel.length) || ((q.type === "qroc" || q.type === "num") && !cur.text.trim()) || (q.type === "order" && cur.order.length < q.items.length);
-    if (empty) { toast(q.type === "order" ? "Placez tous les éléments avant de valider." : "Répondez d'abord (ou attendez la fin du chrono)."); Sound.play("nope"); return; }
+    const msg = answerProblem(q, cur);
+    if (msg) { toast(msg); Sound.play("nope"); return; }
   }
   clearInterval(timerId);
   const p = T.turn, had = !!wedgesOf(p)[q.cat];
@@ -2001,7 +2118,7 @@ function trivialEnd() {
   return `<div class="card end-card enter qcard" style="--cc:var(--accent)">
     <div class="eyebrow">Fin du Trivial Pursuit</div>
     <h1>Classement provisoire</h1>
-    <p class="muted">${S.log.length} questions jouées · ${S.log.filter(l => l.pts >= 10).length} réponses parfaites.</p>
+    <p class="muted">${S.log.length} réponses données · ${S.log.filter(l => l.pts >= 10).length} parfaites.</p>
     <div class="rank-list">${order.map((o, k) => `<div class="opt" style="--pc:${PCOLORS[o.i]};--i:${k};cursor:default"><span>${medals[k] || ""}</span><span class="avatar" style="width:30px;height:30px;font-size:.9rem">${initial(o.p.name)}</span>${esc(o.p.name)} ${pie(wedgesOf(o.i), 24)}<span class="pts" style="margin-left:auto">${o.s} pts</span></div>`).join("")}</div>
     <div class="btn-row" style="justify-content:center;margin-top:16px">
       <button class="btn btn-primary btn-big pulse" data-go="3">Passer ${CASES.length > 1 ? "aux cas cliniques" : "au cas clinique"} en équipe →</button>
@@ -2022,6 +2139,10 @@ document.addEventListener("keydown", e => {
   if (!typing && (e.key === "m" || e.key === "M")) { $("#sound-btn").click(); return; }
   if (S.screen !== 2 || !S.trivial.cur) return;
   const cur = S.trivial.cur;
+  if (PHONES()) {
+    if (e.key === "Enter" && !typing) { e.preventDefault(); if (cur.revealed) nextPhoneQ(); else if ($("#reveal-btn")) $("#reveal-btn").click(); }
+    return;
+  }
   if (e.key === "Enter" && !typing) {
     e.preventDefault();
     if (cur.answered) nextTurn(); else validate();
@@ -2031,8 +2152,418 @@ document.addEventListener("keydown", e => {
   const k = e.key.toUpperCase();
   let i = LETTERS.indexOf(k);
   if (i < 0 && /^[1-9]$/.test(e.key)) i = +e.key - 1;
-  if (i >= 0 && i < 5) { e.preventDefault(); toggleOpt(i); }
+  const qq = qById[cur.qid];
+  if (i >= 0 && qq.o && i < qq.o.length) { e.preventDefault(); toggleOpt(i); }
 });
+
+/* =====================================================================
+   MODE TÉLÉPHONES : l'écran affiche, chacun répond sur son téléphone
+   Relais : MQTT sur WebSocket (broker public, sans compte)
+   ===================================================================== */
+const PHONES = () => S.settings.mode === "phones";
+const MQTT_SRC = "https://cdn.jsdelivr.net/npm/mqtt@5.10.1/dist/mqtt.min.js";
+const QR_SRC = "https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js";
+const BROKERS = ["wss://broker.hivemq.com:8884/mqtt", "wss://broker.emqx.io:8084/mqtt"];
+const BROKER_NAMES = ["HiveMQ", "EMQX"];
+const ROOM_ALPHA = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+const scriptPromises = {};
+function loadScript(src) {
+  return scriptPromises[src] || (scriptPromises[src] = new Promise((res, rej) => {
+    const el = document.createElement("script");
+    el.src = src; el.async = true; el.crossOrigin = "anonymous";
+    el.onload = () => res(); el.onerror = () => { delete scriptPromises[src]; rej(new Error("chargement impossible : " + src)); };
+    document.head.appendChild(el);
+  }));
+}
+const Net = {
+  client: null, room: null, role: null, status: "off",
+  topic(k) { return `toxiquest/v1/${this.room}/${k}`; },
+  async start(role, room, broker, opts) {
+    this.stop(true);
+    this.role = role; this.room = room; this.opts = opts; this.setStatus("connecting");
+    try { await loadScript(MQTT_SRC); } catch (e) { this.setStatus("error"); return; }
+    const c = this.client = window.mqtt.connect(BROKERS[broker], {
+      clientId: `tq-${role}-${Math.random().toString(16).slice(2, 10)}`, clean: true, keepalive: 30, reconnectPeriod: 2500, connectTimeout: 8000
+    });
+    c.on("connect", () => {
+      this.setStatus("on");
+      c.subscribe(this.topic(role === "host" ? "up" : "down"), { qos: 1 });
+      if (opts.onConnect) opts.onConnect();
+    });
+    c.on("reconnect", () => this.setStatus("connecting"));
+    c.on("offline", () => this.setStatus("off"));
+    c.on("error", () => this.setStatus("error"));
+    c.on("message", (t, buf) => {
+      const raw = buf.toString(); if (!raw) return;
+      let d; try { d = JSON.parse(raw); } catch (e) { return; }
+      if (opts.onMessage) opts.onMessage(d);
+    });
+  },
+  send(k, obj, retain = false) {
+    if (this.client && this.client.connected) this.client.publish(this.topic(k), obj === null ? "" : JSON.stringify(obj), { qos: 1, retain });
+  },
+  setStatus(st) { this.status = st; if (this.opts && this.opts.onStatus) this.opts.onStatus(st); },
+  stop(silent) { if (this.client) { try { this.client.end(true); } catch (e) { /* déjà fermé */ } } this.client = null; if (!silent) this.setStatus("off"); }
+};
+const netLabel = st => ({ connecting: "⏳ Connexion au relais…", on: "🟢 Relais connecté", off: "🔴 Hors ligne, reconnexion…", error: "⚠️ Relais injoignable (réseau ou bloqueur ?)" }[st] || "");
+
+/* ---------- côté ordinateur ---------- */
+const seen = [0, 0, 0];
+let autoRevealT = null, hostFallbackT = null, lobbyTimer = null;
+const online = i => seen[i] && Date.now() - seen[i] < 40000;
+function genRoom() { let c = ""; for (let i = 0; i < 5; i++) c += ROOM_ALPHA[Math.floor(Math.random() * ROOM_ALPHA.length)]; return c; }
+function joinURL() { return `${location.origin}${location.pathname}?join=${S.room.code}&b=${S.room.b}`; }
+function totalQuestions() {
+  const n = levelQs().length;
+  return S.settings.rounds >= 99 ? n : Math.min(n, S.settings.rounds * S.players.length);
+}
+function ensureHost() {
+  if (!PHONES() || !S.players.length) return;
+  if (!S.room) { S.room = { code: genRoom(), b: 0 }; save(); }
+  if (Net.role === "host" && Net.room === S.room.code && Net.status !== "off" && Net.status !== "error") return;
+  startHost();
+}
+function startHost() {
+  clearTimeout(hostFallbackT);
+  Net.start("host", S.room.code, S.room.b, {
+    onConnect: () => { publishState(); updateLobby(); },
+    onStatus: () => updateLobby(),
+    onMessage: onHostMsg
+  });
+  hostFallbackT = setTimeout(() => {
+    if (Net.status !== "on" && PHONES()) { S.room.b = (S.room.b + 1) % BROKERS.length; save(); startHost(); renderQR(); }
+  }, 15000);
+  clearInterval(lobbyTimer); lobbyTimer = setInterval(updateLobby, 8000);
+}
+function hostState() {
+  const T = S.trivial, cur = T.cur;
+  const phase = T.done ? "end" : !cur ? "lobby" : cur.revealed ? "reveal" : "question";
+  return { v: 1, app: DEMO ? "demo" : "jeu", phase, t: Date.now(),
+    roster: S.players.map(p => p.name), n: (T.qn || 0) + 1, total: totalQuestions(),
+    q: cur ? { qid: cur.qid, deadline: cur.deadline || 0 } : null,
+    answered: cur ? S.players.map((_, i) => !!(cur.answers && cur.answers[i])) : [],
+    results: cur && cur.revealed ? cur.results.map(r => r.pts) : null,
+    scores: S.players.map((_, i) => playerScore(i)) };
+}
+function publishState() { if (PHONES() && Net.role === "host") Net.send("down", hostState(), true); }
+function sanitizeAns(a) {
+  a = a || {};
+  return { sel: Array.isArray(a.sel) ? a.sel.filter(Number.isInteger).slice(0, 12) : [],
+    text: String(a.text || "").slice(0, 140), order: Array.isArray(a.order) ? a.order.map(String).slice(0, 12) : [] };
+}
+function onHostMsg(d) {
+  if (!d || !Number.isInteger(d.p) || !S.players[d.p]) return;
+  const wasOnline = online(d.p);
+  seen[d.p] = Date.now();
+  if (d.k === "hello") {
+    if (!wasOnline) { Sound.play("pop"); toast(`📱 ${S.players[d.p].name} est connecté(e)`); }
+    updateLobby(); publishState(); return;
+  }
+  if (d.k === "answer") {
+    const cur = S.trivial.cur;
+    if (!cur || cur.revealed || d.qid !== cur.qid) return;
+    cur.answers = cur.answers || {};
+    const first = !cur.answers[d.p];
+    cur.answers[d.p] = { ans: sanitizeAns(d.ans), at: Date.now() };
+    save();
+    if (first) Sound.play("click");
+    updateAnswered(); publishState();
+    clearTimeout(autoRevealT);
+    if (S.players.every((_, i) => cur.answers[i])) autoRevealT = setTimeout(() => revealAll(), 1500);
+  }
+}
+function updateLobby() {
+  const ns = $("#net-status"); if (ns) ns.textContent = netLabel(Net.status) + (S.room ? ` · ${BROKER_NAMES[S.room.b]}` : "");
+  S.players.forEach((_, i) => { const dot = $(`[data-lp="${i}"] .dot`); if (dot) dot.classList.toggle("on", !!online(i)); });
+}
+function renderQR() {
+  const box = $("#qr"); if (!box || !S.room) return;
+  const url = joinURL();
+  const link = $("#join-link"); if (link) { link.href = url; }
+  loadScript(QR_SRC).then(() => {
+    const qr = window.qrcode(0, "M"); qr.addData(url); qr.make();
+    box.innerHTML = qr.createSvgTag(4, 2);
+  }).catch(() => { box.innerHTML = `<small>QR code indisponible : utilisez le lien ci-dessous.</small>`; });
+}
+function lobbyHTML() {
+  if (!S.room) return "";
+  return `<h3>📱 Rejoindre avec son téléphone</h3>
+    <div class="qr-wrap"><div class="qr" id="qr"></div><div><div class="room-code" aria-label="Code de la salle">${S.room.code}</div>
+      <small>Scannez le QR code avec l'appareil photo, puis choisissez votre prénom.</small><br><a id="join-link" target="_blank" rel="noopener" class="muted" style="font-size:.74rem">lien direct</a></div></div>
+    <div class="net-status" id="net-status">${netLabel(Net.status)}</div>
+    <div class="lobby-players">${S.players.map((p, i) => `<div class="lp" data-lp="${i}" style="--pc:${PCOLORS[i]}"><span class="avatar">${initial(p.name)}</span><span>${esc(p.name)}</span><span class="dot${online(i) ? " on" : ""}" title="connecté"></span></div>`).join("")}</div>
+    <p class="muted" style="font-size:.72rem;margin:8px 0 0">Relais public gratuit (${BROKER_NAMES.join(" ou ")}) : seuls les prénoms et les réponses y transitent.</p>`;
+}
+function catsCardHTML() {
+  const T = S.trivial;
+  return `<div class="card">
+    <h3>Catégories</h3>
+    <div class="cat-legend">${CATS.map(c => `<div style="--cc:var(${c.css})"><span class="sw"></span><span class="nm">${c.name}</span><small>${remaining(c.id)}</small>
+      <button data-pick="${c.id}" title="Choisir cette catégorie sans tourner la roue" ${T.cur || spinning || !remaining(c.id) ? "disabled" : ""}>Choisir</button></div>`).join("")}</div>
+    <p style="margin:12px 0 0"><small>Un camembert s'obtient avec une réponse parfaite (10/10) dans la catégorie. Les 5 camemberts rapportent +${WEDGE_BONUS} points.${S.settings.level === "hard" ? " Niveau : 💀 questions EDN+ en priorité." : ""}</small></p>
+    <div class="btn-row" style="margin-top:10px"><button class="btn" id="end-trivial">Terminer le Trivial</button></div>
+  </div>`;
+}
+function bindTrivialCommon() {
+  $("#spin-btn").addEventListener("click", spin);
+  $$("[data-pick]").forEach(b => b.addEventListener("click", () => { Sound.play("land"); pickQuestion(b.dataset.pick); }));
+  $("#end-trivial").addEventListener("click", () => {
+    if (confirm("Terminer le Trivial maintenant et afficher le classement ?")) { S.trivial.done = true; S.trivial.cur = null; save(); renderTrivial(); renderScorebar(); publishState(); celebrateEnd(); }
+  });
+}
+function renderTrivialPhones() {
+  const T = S.trivial, root = $("#trivial");
+  ensureHost();
+  if (T.done) { root.innerHTML = trivialEnd(); publishState(); return; }
+  const total = totalQuestions();
+  root.innerHTML = `<div class="trivial-layout">
+    <aside class="side">
+      <div class="card turn-card" style="--pc:var(--accent)">
+        <div class="eyebrow">Question ${Math.min((T.qn || 0) + 1, total)} / ${total}</div>
+        <div class="big">📱 Tout le monde joue</div><br>
+        <small>${T.cur ? (T.cur.revealed ? "correction" : "réponses sur les téléphones") : "lancez la roue"}</small>
+        ${wheelSVG()}
+        <button class="btn btn-primary btn-big${T.cur ? "" : " pulse"}" id="spin-btn" style="width:100%" ${T.cur || spinning ? "disabled" : ""}>🎡 Lancer la roue</button>
+      </div>
+      <div class="card lobby">${lobbyHTML()}</div>
+      ${catsCardHTML()}
+    </aside>
+    <div id="qzone">${T.cur ? phoneQHTML() : `<div class="card end-card"><div style="font-size:3rem;display:inline-block;animation:wiggle 1.2s ease-in-out infinite">📱</div><h2>Tout le monde sur son téléphone !</h2><p class="muted">Scannez le QR code, choisissez votre prénom, puis lancez la roue : la question s'affichera ici et sur chaque téléphone. Chacun répond de son côté, sans voir les réponses des autres.</p></div>`}</div>
+  </div>`;
+  bindTrivialCommon();
+  renderQR();
+  if (T.cur) bindPhoneQ();
+}
+const shortGiven = (q, a) => {
+  if (!a) return "pas de réponse";
+  if (q.o) return a.ans.sel.length ? a.ans.sel.slice().sort((x, y) => x - y).map(i => LETTERS[i]).join(", ") : "rien coché";
+  if (q.type === "order") return a.ans.order.length ? a.ans.order.map(t => t.split(" ")[0]).join(" → ") : "vide";
+  return a.ans.text || "vide";
+};
+function answeredRowHTML() {
+  const cur = S.trivial.cur, q = qById[cur.qid], rev = cur.revealed;
+  return `<div class="answered-row">${S.players.map((p, i) => {
+    const a = cur.answers && cur.answers[i], r = rev && cur.results[i];
+    const cls = r ? (r.pts >= 10 ? " ok" : r.pts > 0 ? " mid" : " ko") : a ? " in" : "";
+    const line = r ? `${r.pts >= 10 ? "✅" : r.pts > 0 ? "🟠" : "❌"} +${r.pts}${r.jury ? " (jury)" : ""} · ${esc(shortGiven(q, a))}` : a ? "✓ a répondu" : `<span class="dots3">réfléchit</span>`;
+    const jury = r && (q.type === "qroc" || q.type === "num") && r.pts === 0 && a ? `<button class="btn-ph" data-jury="${i}">Jury : valider</button>` : "";
+    return `<div class="ans-chip${cls}" style="--pc:${PCOLORS[i]}"><span class="avatar">${initial(p.name)}</span><div><b>${esc(p.name)}</b><small>${line}</small></div>${jury}</div>`;
+  }).join("")}</div>`;
+}
+function phoneQHTML() {
+  const cur = S.trivial.cur, q = qById[cur.qid], cat = catById[q.cat], rev = cur.revealed;
+  const key = "ph:" + cur.qid, enter = animKey !== key; animKey = key;
+  const reveal = rev && revealKey === cur.qid; if (reveal) revealKey = null;
+  const av = i => `<span class="mini-av" style="--pc:${PCOLORS[i]}" title="${esc(S.players[i].name)}">${initial(S.players[i].name)}</span>`;
+  let body = "";
+  if (q.o) {
+    body = `<div class="opts${q.o.length > 6 ? " xl" : ""}">${q.o.map((o, i) => {
+      const good = q.type === "qcu" ? i === q.a : q.a.includes(i);
+      const pickers = rev ? S.players.map((_, p) => p).filter(p => cur.answers && cur.answers[p] && cur.answers[p].ans.sel.includes(i)) : [];
+      const cls = rev ? (good ? (pickers.length ? "good" : "miss") : pickers.length ? "bad" : "") : "";
+      return `<div class="opt ${cls}" style="--i:${i}"><span class="l">${LETTERS[i]}</span><span>${esc(o)}</span>${rev ? `<span class="tag">${pickers.map(av).join("")}</span>` : ""}</div>`;
+    }).join("")}</div>`;
+  } else if (q.type === "order") {
+    body = rev ? `<p><b>Ordre attendu :</b> ${esc(q.items.join(" → "))}</p>`
+      : `<div class="order-pool">${q.items.slice().sort((a, b) => a.localeCompare(b)).map(t => `<span class="order-item">${esc(t)}</span>`).join("")}</div><p class="muted">Chacun classe sur son téléphone.</p>`;
+  } else if (!rev) body = `<p class="muted">Réponse à taper sur chaque téléphone.</p>`;
+  const n = cur.answers ? Object.keys(cur.answers).length : 0;
+  return `<article class="card qcard${enter ? " enter" : ""}${reveal ? " reveal" : ""}" style="--cc:var(${cat.css})">
+    <div class="q-head"><span class="chip cat-chip" style="--cc:var(${cat.css})">${cat.icon} ${esc(cat.name)}</span><span class="chip">${typeLabel(q)}</span>${q.hard ? `<span class="chip hard-chip">💀 EDN+</span>` : ""}<span class="spacer"></span>
+      <span class="chip">📱 tout le monde</span>${S.settings.timer && !rev ? timerHTML() : ""}</div>
+    <div class="q-text">${esc(q.q)}</div>${qHint(q)}
+    ${q.img ? photo(q.img, rev ? { hidden: false } : { spoiler: true, rid: "q:" + q.id }) : ""}
+    ${body}
+    ${answeredRowHTML()}
+    ${rev ? phoneFeedbackHTML(q, cur)
+      : `<div class="btn-row" style="margin-top:14px"><button class="btn btn-primary btn-big${n === S.players.length ? " pulse" : ""}" id="reveal-btn">Révéler la réponse (${n}/${S.players.length} ont répondu)</button></div>`}
+  </article>`;
+}
+function phoneFeedbackHTML(q, cur) {
+  const last = isLastPhoneQ();
+  const sec = SKILLS[q.skill] && SKILLS[q.skill].sec;
+  const best = Math.max(...cur.results.map(r => r.pts));
+  return `<div class="feedback" role="status">
+    <div class="verdict ${best >= 10 ? "ok" : best > 0 ? "mid" : "ko"}">${best >= 10 ? "✅" : best > 0 ? "🟠" : "❌"} ${cur.results.filter(r => r.pts >= 10).length}/${S.players.length} réponse(s) parfaite(s) ${rangBadge(q.oic, q.col)}</div>
+    <p><b>Réponse attendue :</b> ${esc(rightAnswer(q))}</p>
+    <div class="exp">${q.exp}</div>
+    <div class="src">${oicLine(q.oic)}<span class="spacer" style="flex:1"></span>${sec && document.getElementById(sec) ? `<button class="btn" data-open="${sec}">Revoir la fiche</button>` : ""}</div>
+    <div class="btn-row" style="margin-top:12px"><button class="btn btn-primary btn-big pulse" id="next-btn">${last ? "Voir le classement du Trivial →" : "Question suivante →"}</button></div></div>`;
+}
+const isLastPhoneQ = () => (S.trivial.qn || 0) + 1 >= totalQuestions() || remainingTotal() === 0;
+function bindPhoneQ() {
+  const cur = S.trivial.cur;
+  if (!cur.revealed) {
+    $("#reveal-btn").addEventListener("click", () => {
+      const n = cur.answers ? Object.keys(cur.answers).length : 0;
+      if (n < S.players.length && !confirm(`${S.players.length - n} joueur(s) n'ont pas encore répondu. Révéler quand même ?`)) return;
+      revealAll();
+    });
+    if (S.settings.timer) startTimer(() => revealAll(true));
+  } else {
+    $("#next-btn").addEventListener("click", nextPhoneQ);
+    $$("[data-jury]").forEach(b => b.addEventListener("click", () => juryPhone(+b.dataset.jury)));
+  }
+}
+function updateAnswered() {
+  if (S.screen !== 2 || !S.trivial.cur) return;
+  const row = $("#qzone .answered-row"); if (row) row.outerHTML = answeredRowHTML();
+  const rb = $("#reveal-btn"), n = S.trivial.cur.answers ? Object.keys(S.trivial.cur.answers).length : 0;
+  if (rb) { rb.textContent = `Révéler la réponse (${n}/${S.players.length} ont répondu)`; rb.classList.toggle("pulse", n === S.players.length); }
+  renderScorebar();
+}
+function revealAll() {
+  const cur = S.trivial.cur; if (!cur || cur.revealed) return;
+  clearInterval(timerId); clearTimeout(autoRevealT);
+  const q = qById[cur.qid];
+  const had = S.players.map((_, i) => !!wedgesOf(i)[q.cat]);
+  cur.results = S.players.map((_, i) => {
+    const a = cur.answers && cur.answers[i];
+    if (!a) return { pts: 0, given: "(pas de réponse)" };
+    const r = scoreQuestion(q, { sel: a.ans.sel, text: a.ans.text, order: a.ans.order });
+    return { pts: r.pts, given: r.given };
+  });
+  cur.revealed = true;
+  cur.results.forEach((r, i) => S.log.push({ p: i, qid: q.id, pts: r.pts, given: r.given }));
+  save(); revealKey = cur.qid;
+  if (S.screen === 2) renderTrivial();
+  renderScorebar(); publishState();
+  const best = Math.max(...cur.results.map(r => r.pts));
+  Sound.play(best >= 10 ? "correct" : best > 0 ? "partial" : "wrong");
+  cur.results.forEach((r, i) => {
+    if (r.pts < 10) return;
+    Confetti.fromEl($(`[data-pchip="${i}"]`), { n: 40, power: 7, dir: Math.PI / 2, spread: Math.PI * 1.4 });
+    celebrateWedge(i, q.cat, had[i]);
+  });
+}
+function juryPhone(i) {
+  const cur = S.trivial.cur, q = qById[cur.qid];
+  const had = !!wedgesOf(i)[q.cat];
+  cur.results[i].pts = 10; cur.results[i].jury = true;
+  const l = S.log.slice().reverse().find(x => x.p === i && x.qid === cur.qid); if (l) { l.pts = 10; l.jury = true; }
+  save(); renderTrivial(); renderScorebar(); publishState();
+  Sound.play("correct"); celebrateWedge(i, q.cat, had);
+}
+function nextPhoneQ() {
+  const T = S.trivial; if (!T.cur || !T.cur.revealed) return;
+  const last = isLastPhoneQ();
+  T.qn = (T.qn || 0) + 1; T.cur = null;
+  if (last) T.done = true;
+  save(); renderTrivial(); renderScorebar(); publishState();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (last) celebrateEnd(); else Sound.play("turn");
+}
+
+/* ---------- côté téléphone (manette) ---------- */
+function bootPhone(code, b) {
+  document.body.classList.add("phone-mode");
+  const root = document.createElement("div"); root.id = "phone"; document.body.appendChild(root);
+  const KEY = `toxiquest-phone-${code}`;
+  const P = { me: null, st: null, conn: "connecting", draft: { sel: [], text: "", order: [] }, sentQ: null, shuffled: {}, broker: b === null ? 0 : b, fixed: b !== null, got: false, tries: 0 };
+  try { const m = JSON.parse(localStorage.getItem(KEY) || "null"); if (m && Number.isInteger(m.me)) P.me = m.me; } catch (e) { /* pas de mémoire */ }
+  const persist = () => { try { localStorage.setItem(KEY, JSON.stringify({ me: P.me })); } catch (e) { /* ignoré */ } };
+  const vib = p => { try { if (navigator.vibrate) navigator.vibrate(p); } catch (e) { /* non supporté */ } };
+  const hello = () => { if (P.me !== null) Net.send("up", { k: "hello", p: P.me }); };
+  let phTimer = null;
+  function connect() {
+    P.got = false;
+    Net.start("phone", code, P.broker, {
+      onConnect: hello,
+      onStatus: st => { P.conn = st; renderPh(); },
+      onMessage: d => { P.got = true; onState(d); }
+    });
+    if (!P.fixed) setTimeout(() => { if (!P.got && P.tries < 3) { P.tries++; P.broker = (P.broker + 1) % BROKERS.length; connect(); } }, 7000);
+  }
+  function onState(d) {
+    if (!d || d.v !== 1) return;
+    const prevQ = P.st && P.st.q ? P.st.q.qid : null, prevPhase = P.st ? P.st.phase : null;
+    P.st = d;
+    if (d.q && d.q.qid !== prevQ) { P.draft = { sel: [], text: "", order: [] }; P.sentQ = null; if (d.phase === "question") vib(80); }
+    if (d.phase === "reveal" && prevPhase !== "reveal") vib([90, 60, 90]);
+    if (P.me !== null && d.roster && !d.roster[P.me]) P.me = null;
+    renderPh();
+  }
+  setInterval(hello, 12000);
+  function timerLeft() { return P.st && P.st.q && P.st.q.deadline ? Math.max(0, Math.ceil((P.st.q.deadline - Date.now()) / 1000)) : null; }
+  function renderPh() {
+    clearInterval(phTimer);
+    const focused = document.activeElement && document.activeElement.id === "ph-in";
+    const st = P.st;
+    const head = `<div class="ph-head"><span class="logo">T</span><div><b>ToxiQuest</b><small>Salle ${esc(code)}${DEMO ? " · test" : ""}</small></div><span class="ph-conn ${P.conn}" title="${esc(netLabel(P.conn))}"></span></div>`;
+    let body = "";
+    if (!st) body = `<div class="ph-card center"><div class="ph-spin"></div><h2>${P.conn === "error" ? "Relais injoignable" : "Connexion…"}</h2><p class="muted">${P.conn === "error" ? "Vérifiez la connexion internet du téléphone, puis rechargez la page." : "En attente de l'ordinateur. Vérifiez que le jeu est ouvert en mode 📱 sur l'écran principal."}</p></div>`;
+    else if (P.me === null || !st.roster[P.me]) body = `<div class="ph-card"><h2>Qui es-tu ?</h2><div class="ph-roster">${st.roster.map((n, i) => `<button class="ph-who" data-me="${i}" style="--pc:${PCOLORS[i]}"><span class="avatar">${initial(n)}</span>${esc(n)}</button>`).join("")}</div></div>`;
+    else {
+      const name = st.roster[P.me], score = st.scores ? st.scores[P.me] : 0;
+      const me = `<div class="ph-me" style="--pc:${PCOLORS[P.me]}"><span class="avatar">${initial(name)}</span><b>${esc(name)}</b><span class="ph-score">${score} pts</span><button class="ph-link" id="ph-change">changer</button></div>`;
+      if (st.phase === "lobby") body = me + `<div class="ph-card center"><div class="ph-wait">🎡</div><h2>Prêt !</h2><p class="muted">Regardez l'écran : la roue va tirer la question ${st.n} / ${st.total}.</p></div>`;
+      else if (st.phase === "end") body = me + `<div class="ph-card center"><div class="ph-wait">🏆</div><h2>Trivial terminé</h2><p>Votre score : <b>${score} points</b>.</p><p class="muted">Le classement est sur l'écran principal.</p></div>`;
+      else {
+        const q = qById[st.q.qid];
+        if (!q) body = me + `<div class="ph-card center"><h2>Question inconnue</h2><p class="muted">Le téléphone et l'ordinateur n'ont pas la même version du jeu : rechargez cette page.</p></div>`;
+        else if (st.phase === "reveal") {
+          const pts = st.results ? st.results[P.me] : 0;
+          body = me + `<div class="ph-card center ph-result ${pts >= 10 ? "ok" : pts > 0 ? "mid" : "ko"}"><div class="ph-big">${pts >= 10 ? "✅" : pts > 0 ? "🟠" : "❌"}</div><h2>${pts >= 10 ? "Bonne réponse !" : pts > 0 ? "Presque !" : "Raté"}</h2><p class="ph-pts">+${pts} pts</p>
+            <p><b>Réponse :</b> ${esc(rightAnswer(q))}</p><p class="muted">L'explication est sur l'écran principal.</p></div>`;
+        } else body = me + phQuestionHTML(q, st);
+      }
+    }
+    $("#phone").innerHTML = head + body;
+    bindPh();
+    if (focused) { const inp = $("#ph-in"); if (inp) { inp.focus(); const v = inp.value; inp.setSelectionRange(v.length, v.length); } }
+    if (st && st.phase === "question" && st.q.deadline) phTimer = setInterval(() => {
+      const t = timerLeft(), el = $("#ph-timer");
+      if (el) { el.textContent = t + " s"; el.classList.toggle("low", t <= 10); }
+      if (t === 0) { clearInterval(phTimer); renderPh(); }
+    }, 500);
+  }
+  function phQuestionHTML(q, st) {
+    const cat = catById[q.cat], d = P.draft, sent = P.sentQ === q.id;
+    const over = timerLeft() === 0;
+    let inp = "";
+    if (q.o) inp = `<div class="ph-opts">${q.o.map((o, i) => `<button class="ph-opt${d.sel.includes(i) ? " sel" : ""}" data-po="${i}" ${over ? "disabled" : ""}><span class="l">${LETTERS[i]}</span><span>${esc(o)}</span></button>`).join("")}</div>`;
+    else if (q.type === "order") {
+      const sh = P.shuffled[q.id] || (P.shuffled[q.id] = shuffle(q.items));
+      inp = `<div class="ph-order">${sh.filter(t => !d.order.includes(t)).map(t => `<button class="ph-chip" data-padd="${esc(t)}" ${over ? "disabled" : ""}>${esc(t)}</button>`).join("") || "<small>Tout est placé.</small>"}</div>
+        <ol class="ph-ordered">${d.order.map(t => `<li><button class="ph-chip on" data-prem="${esc(t)}" ${over ? "disabled" : ""}>${esc(t)} ✕</button></li>`).join("")}</ol>`;
+    } else inp = `<input id="ph-in" class="ph-input" type="text" inputmode="${q.type === "num" ? "decimal" : "text"}" autocomplete="off" placeholder="${q.type === "num" ? "Nombre" : "Votre réponse"}" value="${esc(d.text)}" ${over ? "disabled" : ""}>${q.unit ? `<small>${esc(q.unit)}</small>` : ""}`;
+    const t = timerLeft();
+    const others = (st.answered || []).filter(Boolean).length;
+    return `<div class="ph-card">
+      <div class="ph-q-head"><span class="chip cat-chip" style="--cc:var(${cat.css})">${cat.icon} ${esc(cat.short)}</span>${q.hard ? `<span class="chip hard-chip">💀</span>` : ""}<span class="chip">${esc(typeLabel(q))}</span>${t !== null ? `<span class="ph-timer" id="ph-timer">${t} s</span>` : ""}</div>
+      <p class="ph-q">${esc(q.q)}</p>${q.img ? `<p class="muted">📷 La photo est sur l'écran principal.</p>` : ""}
+      ${q.type === "qrp" ? `<p class="muted">Cochez exactement ${q.n} réponses.</p>` : ""}
+      ${inp}
+      <p class="muted ph-status">${over ? "⏰ Temps écoulé" : sent ? "✅ Réponse envoyée : vous pouvez la modifier jusqu'à la correction." : "Votre réponse reste secrète jusqu'à la correction."} · ${others}/${st.roster.length} ont répondu</p>
+    </div>
+    ${over ? "" : `<button class="ph-send${sent ? " sent" : ""}" id="ph-send">${sent ? "Renvoyer ma réponse" : "Envoyer ma réponse"}</button>`}`;
+  }
+  function bindPh() {
+    $$("[data-me]").forEach(b => b.addEventListener("click", () => { P.me = +b.dataset.me; persist(); hello(); vib(40); renderPh(); }));
+    const ch = $("#ph-change"); if (ch) ch.addEventListener("click", () => { P.me = null; persist(); renderPh(); });
+    const q = P.st && P.st.q && qById[P.st.q.qid];
+    $$("[data-po]").forEach(b => b.addEventListener("click", () => {
+      const i = +b.dataset.po, d = P.draft;
+      if (q.type === "qcu") d.sel = [i];
+      else if (d.sel.includes(i)) d.sel = d.sel.filter(x => x !== i);
+      else if (q.type === "qrp" && d.sel.length >= q.n) { vib(120); return; }
+      else d.sel = d.sel.concat(i);
+      vib(15); renderPh();
+    }));
+    $$("[data-padd]").forEach(b => b.addEventListener("click", () => { P.draft.order.push(b.dataset.padd); vib(15); renderPh(); }));
+    $$("[data-prem]").forEach(b => b.addEventListener("click", () => { P.draft.order = P.draft.order.filter(t => t !== b.dataset.prem); renderPh(); }));
+    const inp = $("#ph-in"); if (inp) inp.addEventListener("input", () => { P.draft.text = inp.value; });
+    const send = $("#ph-send");
+    if (send) send.addEventListener("click", () => {
+      const msg = answerProblem(q, P.draft);
+      if (msg) { alert(msg); return; }
+      Net.send("up", { k: "answer", p: P.me, qid: q.id, ans: P.draft });
+      P.sentQ = q.id; vib([30, 40, 30]); renderPh();
+    });
+  }
+  renderPh();
+  connect();
+}
 
 /* =====================================================================
    ÉTAPE 3 — CAS CLINIQUES
@@ -2480,6 +3011,8 @@ window.addEventListener("afterprint", () => document.body.classList.remove("prin
 
 /* ---------------- démarrage ---------------- */
 applyPrefs();
+const JOIN = new URLSearchParams(location.search);
+if (JOIN.has("join")) { bootPhone(JOIN.get("join").toUpperCase().replace(/[^A-Z0-9]/g, ""), JOIN.has("b") ? (+JOIN.get("b") || 0) : null); return; }
 initCourse();
 if (S.trivial.cur && !S.trivial.cur.answered && S.settings.timer) S.trivial.cur.deadline = Date.now() + S.settings.timer * 1000;
 go(S.players.length ? S.screen : 0, true);
